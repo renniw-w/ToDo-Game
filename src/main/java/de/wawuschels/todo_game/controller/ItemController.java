@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 @AllArgsConstructor
@@ -37,9 +36,7 @@ public class ItemController {
         try {
             itemService.addOrEditItem(item);
             return ResponseEntity.ok().build();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             return ResponseEntity.badRequest().build();
         }
     }
