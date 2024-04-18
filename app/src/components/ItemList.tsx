@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Items from "./Items";
 import eventBus from "./EventBus";
+import SelectedTaskList from "./SelectedTaskList";
 
 const ItemList = () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [dataLoaded, setDataLoaded] = useState(false);
-  const [currentItem, setCurrentItem] = useState([]);
+  const [items, setItems] = useState<item[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [dataLoaded, setDataLoaded] = useState<boolean>(false);
 
   eventBus.on("itemChanged", (data: any) => setDataLoaded(false));
   if (!dataLoaded) {
@@ -28,9 +28,8 @@ const ItemList = () => {
     return <p>Loading...</p>;
   }
 
-  function onUpdateItem(updatedItem: any) {
-    const updatedItems: any = items.map((item) => {
-      // @ts-ignore
+  function onUpdateItem(updatedItem: item) {
+    const updatedItems = items.map((item) => {
       if (item.id === updatedItem.id) {
         return updatedItem;
       } else {

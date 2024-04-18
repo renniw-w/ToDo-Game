@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Button } from "reactstrap";
 import EventBus from "./EventBus";
+import SelectTask from "./SelectTask";
+import DummyUsers from "./DummyData";
 
 function Item({
   item,
@@ -17,7 +19,7 @@ function Item({
   };
   return (
     <tr key={id}>
-      <td>{id}</td>
+      <td hidden={true}>{id}</td>
       <td>{name}</td>
       <td>{score}</td>
       <td>{description}</td>
@@ -31,6 +33,7 @@ function Item({
         >
           Aufgabe Bearbeiten
         </Button>
+        <SelectTask users={DummyUsers} />
         <Button
           color="danger"
           onClick={() => {

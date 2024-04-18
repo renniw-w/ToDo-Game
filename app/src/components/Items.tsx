@@ -18,7 +18,7 @@ function Items({ items, onUpdateItem }: any) {
   eventBus.on("handleCancelEditItemForm", () => setIsEditing(false));
 
   // hides Form after update, displays changes
-  function handleItemUpdate(updatedItem: any) {
+  function handleItemUpdate(updatedItem: item) {
     eventBus.dispatch("handleCancelEditItemForm", {
       message: "Item wurde geupdated",
     });
@@ -55,7 +55,7 @@ function Items({ items, onUpdateItem }: any) {
         <Table hover bordered striped>
           <thead>
             <tr>
-              <th />
+              <th hidden={true} />
               <th>Aufgabe</th>
               <th>Anzahl der Punkte</th>
               <th>Beschreibung</th>
