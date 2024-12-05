@@ -37,7 +37,7 @@ public class ItemController {
             itemService.addOrEditItem(item);
             return ResponseEntity.ok().build();
         } catch (Exception ex) {
-            return ResponseEntity.badRequest().build();
+          return ResponseEntity.badRequest().build();
         }
     }
 

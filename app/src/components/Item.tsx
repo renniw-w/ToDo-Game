@@ -33,7 +33,7 @@ function Item({
         >
           Aufgabe Bearbeiten
         </Button>
-        <SelectTask users={DummyUsers} />
+        <SelectTask users={DummyUsers} itemId={id} />
         <Button
           color="danger"
           onClick={() => {

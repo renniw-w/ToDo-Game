@@ -3,7 +3,7 @@ package de.wawuschels.todo_game.domain.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+@Entity(name="player")
 @Data
 public class Player {
 

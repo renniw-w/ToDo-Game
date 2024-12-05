@@ -1,11 +1,11 @@
-type item = {
+export type item= {
   id: number;
   name: string;
   description: string;
   score: number;
 };
 
-type user = {
+export type user = {
   id: number;
   name: string;
 };

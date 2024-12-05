@@ -4,6 +4,7 @@ import Item from "./Item";
 import EditItem from "./EditItem";
 import eventBus from "./EventBus";
 import AddItemForm from "./addItemForm";
+import { item } from "./Types";
 
 function Items({ items, onUpdateItem }: any) {
   // state for conditional render of edit form
@@ -44,7 +45,7 @@ function Items({ items, onUpdateItem }: any) {
 
   // capture the Item you wish to edit, set to state
   function captureEdit(clickdItem: any) {
-    let filtered = items.filter((item: any) => item.id === clickdItem.id);
+    let filtered = items.filter((item: item) => item.id === clickdItem.id);
     setEditForm(filtered[0]);
   }
 
@@ -64,7 +65,7 @@ function Items({ items, onUpdateItem }: any) {
             </tr>
           </thead>
           <tbody>
-            {items.map((item: any) => (
+            {items?.map((item: item) => (
               <Item
                 key={item.id}
                 item={item}
